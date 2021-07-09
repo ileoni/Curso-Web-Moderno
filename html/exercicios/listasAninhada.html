@@ -1,0 +1,80 @@
+<h1>Projeto</h1>
+<ul class="tree">
+    <li>
+        <span class="btn">
+            backend
+        </span>
+        <ul id="backend">
+            <li>
+                <span  class="btn">
+                    app
+                </span>
+                <ul id="app">
+                    <li>produto.js</li>
+                    <li>usuario.js</li>
+                    <li>venda.js</li>
+                </ul>
+            </li>
+            <li>
+                <span  class="btn">
+                    config
+                </span>
+                <ul id="config">
+                    <li>banco.js</li>
+                    <li>rotas.js</li>
+                    <li>servidor.js</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <span  class="btn">
+            frontend
+        </span>
+        <ul id="frontend">
+            <li>
+                <span  class="btn">
+                    public
+                </span>
+                <ul id="public">
+                    <li>app.css</li>
+                    <li>app.js</li>
+                    <li>index.html</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <span class="btn">
+            imagem
+        </span>
+        <ul id="imagem">
+            <li>image1.png</li>
+            <li>image2.png</li>
+        </ul>
+    </li>
+</ul>
+<link rel="stylesheet" href="http://files.cod3r.com.br/curso-web/tree.css">
+<script>
+    const btn = document.querySelectorAll('.btn')
+    const subDiretorios = document.querySelectorAll('ul')
+
+    function click(button) {
+        return new Promise( resolve => {
+            resolve(
+                button.forEach(btn => {    
+                    btn.style.cursor = 'pointer'
+                    btn.onclick = () => {
+                        subDiretorios.forEach(diretorio => {
+                            if(btn.innerText === diretorio.id){
+                                diretorio.style.display = (diretorio.style.display != 'none') ? 'none': 'block'
+                            }
+                        })
+                    }
+                })
+            )
+        })
+    }
+
+    click(btn)
+</script>
