@@ -1,0 +1,17 @@
+# Remove
+
+db.collection.remove({ sigla: "AC" })
+
+db.collection.remove({ populacao: { $exists: false} }, 1)
+
+# update para remoção
+db.collection.update(
+    { sigla: "RJ" },
+    {
+        $set: { populacao: 16720000 }
+    }
+)
+
+db.collection.remove({
+    populacao: { $lt: 20000000 }
+})

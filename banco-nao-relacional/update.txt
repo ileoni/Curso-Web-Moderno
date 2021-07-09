@@ -1,0 +1,22 @@
+# Update
+
+db.collection.update({ sigla: "SP"}, { $set: { populacao: 45340000 }})
+
+db.collection.update({ sigla: "SP"}, { $set: { cidades: [{ nome: "Sergipe" }] }})
+
+db.collection.update(
+    { sigla: "SP" },
+    { $push: { cidades: { nome: "Santos", populacao: 433966 } } }
+)
+
+db.collection.find(
+    {
+        populacao: {
+            $exists: true
+        }
+    },
+    {
+        _id: 0,
+        nome 1
+    }
+)

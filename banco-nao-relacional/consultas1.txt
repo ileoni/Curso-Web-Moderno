@@ -1,0 +1,19 @@
+# Consultas
+
+db.'collection...'.find()
+db ... .find()
+db ... .find() ... .pretty()
+
+db ... .find({sigla: "RJ"})
+db ... .find({sigla: "RJ"})
+
+db ... .find({$or: [{sigla: "RJ"}, {sigla: "AC"}]})
+db ... .find({$and: [{sigla: "RJ"}, {sigla: "AC"}]})
+
+db ... .find({populacao: {$exists: true})
+
+db ... .find().skip()
+db ... .find().skip().limit(2)
+
+db ... .find({sigla: "SP"}, {nome: 1, sigla: 1})
+db ... .find({sigla: "SP"}, {nome: 1, sigla: 1, _id: 0})
